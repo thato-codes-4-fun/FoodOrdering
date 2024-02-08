@@ -1,9 +1,15 @@
-import { Text, View } from '@/components/Themed';
+import { Text, View } from '../../components/Themed';
 import { Image } from 'expo-image';
 import { StyleSheet } from 'react-native';
-import Colors from '@/constants/Colors';
+import Colors from '../../constants/Colors';
+import {Product} from '../types'
 
-const ProductListITem = ({product})=> {
+
+type ProductListItemProps = {
+  product : Product,
+}
+
+const ProductListITem = ({product}: ProductListItemProps)=> {
     return (
       <View>
         <Image

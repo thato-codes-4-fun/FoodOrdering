@@ -1,11 +1,13 @@
 import { StyleSheet } from 'react-native';
-import { View } from '@/components/Themed';
-import products from '../../../assets/data/products';
-import ProductListITem from '../../components/productListItem';
+import { View } from '@/component/Themed';
+import products from '@/assets/data/products';
+import ProductListITem from '@/components/productListItem';
 
 
 const product = products[0];
 const productTwo = products[1];
+
+
 
 
 export default function TabOneScreen() {

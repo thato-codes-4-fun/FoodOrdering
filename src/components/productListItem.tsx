@@ -11,7 +11,7 @@ type ProductListItemProps = {
 
 const ProductListITem = ({product}: ProductListItemProps)=> {
     return (
-      <View>
+      <View style={{flex: 1}}>
         <Image
           style={styles.image}
           source={product.image}

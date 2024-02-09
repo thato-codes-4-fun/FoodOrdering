@@ -2,6 +2,7 @@ import { FlatList, StyleSheet } from 'react-native';
 import { View } from '@/component/Themed';
 import products from '@/assets/data/products';
 import ProductListITem from '@/components/productListItem';
+import Colors from '@/constants/Colors';
 
 
 
@@ -17,13 +18,11 @@ export default function TabOneScreen() {
         columnWrapperStyle={{gap: 10}}
       />
     </View>
-  );
-}
+  );}
 
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    backgroundColor: 'white',
     borderRadius: 20,
     flex: 1,
   },

@@ -11,7 +11,7 @@ type ProductListItemProps = {
 
 const ProductListITem = ({product}: ProductListItemProps)=> {
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: Colors.light.background, borderRadius: 20, padding:10}}>
         <Image
           style={styles.image}
           source={product.image}
@@ -27,7 +27,6 @@ const ProductListITem = ({product}: ProductListItemProps)=> {
 const styles = StyleSheet.create({
   image: {
     width: '100%',
-  
     alignSelf: 'center',
     aspectRatio: 1,
   },

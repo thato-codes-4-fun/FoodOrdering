@@ -2,7 +2,7 @@ import { FlatList, StyleSheet } from 'react-native';
 import { View } from '@/component/Themed';
 import products from '@/assets/data/products';
 import ProductListITem from '@/components/productListItem';
-import Colors from '@/constants/Colors';
+
 
 
 

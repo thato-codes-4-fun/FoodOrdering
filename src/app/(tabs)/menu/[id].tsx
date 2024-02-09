@@ -4,9 +4,9 @@ import { Stack, useLocalSearchParams } from 'expo-router';
 import Products from '@/assets/data/products'
 import Colors from '@/constants/Colors';
 import Button from '@/components/button'
-import { PizzaSize } from '@/types';
+import { PizzaSize, Product } from '@/types';
 
-const sizes = ['S', 'M', 'L', 'XL']
+const sizes : PizzaSize[] = ['S', 'M', 'L', 'XL']
 
 
 const ProductDetails = () => {
@@ -19,7 +19,7 @@ const ProductDetails = () => {
 
   
   const {id,} = useLocalSearchParams();
-  const product = Products.find(item=> item.id.toString() == id);
+  const product  = Products.find(item=> item.id.toString() == id);
   const addToCart = ()=> {
     if(product){
       console.warn(`add to cart: ${product.name}`)
@@ -41,7 +41,7 @@ const ProductDetails = () => {
       <Text style={styles.subTitle}>Select a size</Text>
       <View style={styles.sizeContainer}>
         {
-          sizes.map((item) =>{
+          sizes.map((item: PizzaSize) =>{
             return (
               <Pressable onPress={()=> handleSelectSize(item)}   key={item} style={[styles.size, {backgroundColor: selectedSize == item? 'grey': 'gainsboro'}]}>
                 <Text style={[styles.sizeText, {color: selectedSize === item? 'white': 'black'}]}>{item}</Text>

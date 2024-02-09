@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
     borderRadius: 20,
-    flex: 1,
+    overflow: 'hidden',
+    
   },
 
 });

@@ -9,14 +9,12 @@ import { Link } from 'expo-router';
 type ProductListItemProps = {
   product : Product,
 }
-
-const handlePress =() => {
-  console.log('pressed')
-}
-
+ 
 const ProductListITem = ({product}: ProductListItemProps)=> {
+  
     return (
-      <Link href={`/${product.id}`} asChild>
+      
+      <Link href={`/menu/${product.id}`} asChild>
         <Pressable  style={{flex: 1, backgroundColor: Colors.light.background, borderRadius: 20, padding:10}}>
           <Image
             style={styles.image}

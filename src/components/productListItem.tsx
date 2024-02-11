@@ -14,7 +14,7 @@ const ProductListITem = ({product}: ProductListItemProps)=> {
   
     return (
       <Link href={`/menu/${product.id}`} asChild>
-        <Pressable style={{flex: 1, backgroundColor: Colors.light.background, borderRadius: 20, padding:10}}>
+        <Pressable style={{flex: 1, borderRadius: 20, padding:10}}>
           <Image
             style={styles.image}
             source={product.image}
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     aspectRatio: 1,
+    flex: 1,
   },
   title: {
     fontSize: 20,

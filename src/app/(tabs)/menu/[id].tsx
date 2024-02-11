@@ -22,7 +22,7 @@ const ProductDetails = () => {
   const product  = Products.find(item=> item.id.toString() == id);
   const addToCart = ()=> {
     if(product){
-      console.warn(`add to cart: ${product.name}`)
+      console.warn(`add to cart: ${product.name} at size ${selectedSize}`)
     }
   }
   if(!product){

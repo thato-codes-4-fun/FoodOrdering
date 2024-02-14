@@ -5,14 +5,13 @@ import products from "@/assets/data/products";
 type CartType = {
     items: CartItem[],
     addItem: (product: Product, size: PizzaSize)=> void,
-  
-    // updateQuantity: ()=> void,
+    updateQuantity: (cartItem: String, updateValue: number)=> void,
     // total: number,
 }
 
 const CartContext = createContext<CartType>({
     items: [],
-    // updateQuantity: ()=> {},
+    updateQuantity: ()=> {},
     addItem: (product: Product, size: PizzaSize)=> {},
 
     // total: 0,
@@ -26,22 +25,31 @@ const CartProvider = ({children}:  PropsWithChildren) => {
         console.log('adding item to cart!')
         console.log(`product: ${product.name}`);
         const existingItem = items.find((item)=> item.id == product.id.toString());
-        if(existingItem){
+        console.log(existingItem)
+        if(!existingItem){
+            console.log('hit')
             const newCartItem = {
                 id:'1',
                 product: product,
-                size: '',
+                product_id: product.id,
+                size: size,
                 quantity: 1,
             }
 
-            // setItems((existingItem)=> [newCartItem, ...existingItem]);
+            setItems([newCartItem, ...items]);
+            console.log(items)
         }
+        console.log('hit')
         return;
+    }
+
+    const updateQuantity = (cartItem: String, updateValue: number)=> {
+        console.log(`updating ${cartItem} with value: ${updateValue}`)
     }
 
     return (
         (
-            <CartContext.Provider value={{items, addItem }}>
+            <CartContext.Provider value={{items, addItem, updateQuantity }}>
                 {children}
             </CartContext.Provider>
         )
